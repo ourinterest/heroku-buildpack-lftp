@@ -47,6 +47,6 @@ else
 fi
 
 set-env PATH '/app/.heroku/vendor/lftp/bin/:$PATH'
-set-env LD_LIBRARY_PATH '/app/.heroku/vendor/lftp/lib/:$LD_LIBRARY_PATH'
+set-env LD_LIBRARY_PATH '/app/.heroku/vendor/lftp/lib/:$LD_LIBRARY_PATH:/app/bin'
 
 echo "Done" | indent
