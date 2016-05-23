@@ -44,7 +44,6 @@ if [ ! -d $CACHE_DIR/lftp_$VERSION ]; then
 else
 	echo "Installing lftp from cache" | indent
 	cp -R $CACHE_DIR/lftp_$VERSION/* $INSTALL_DIR/
-	/
 fi
 
 set-env PATH '/app/bin/lftp/bin/:$PATH'
