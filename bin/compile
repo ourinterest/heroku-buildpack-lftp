@@ -22,7 +22,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 VERSION="4.6.4"
 LFTP_BUILD="$(mktmpdir lftp)"
-INSTALL_DIR="$BUILD_DIR/vendor/lftp"
+INSTALL_DIR="$BUILD_DIR/bin/lftp"
 PROFILE_PATH="$BUILD_DIR/.profile.d/lftp.sh"
 
 mkdir -p $INSTALL_DIR
@@ -46,7 +46,7 @@ else
 	cp -R $CACHE_DIR/lftp_$VERSION/* $INSTALL_DIR/
 fi
 
-set-env PATH '/app/.heroku/vendor/lftp/bin/:$PATH'
-set-env LD_LIBRARY_PATH '/app/.heroku/vendor/lftp/lib/:$LD_LIBRARY_PATH:/app/bin'
+set-env PATH '/app/.heroku/vendor/lftp/bin/:/app/bin:$PATH'
+set-env LD_LIBRARY_PATH '/app/.heroku/vendor/lftp/lib/:/app/bin:$LD_LIBRARY_PATH'
 
 echo "Done" | indent
