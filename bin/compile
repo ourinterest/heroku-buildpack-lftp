@@ -32,8 +32,8 @@ mkdir -p $CACHE_DIR
 if [ ! -d $CACHE_DIR/lftp_$VERSION ]; then
 	echo "Fetching and installing lftp" | indent
 	cd $LFTP_BUILD
-	curl -O http://lftp.yar.ru/ftp/lftp-"$VERSION".tar.xz
-	curl --silent http://lftp.yar.ru/ftp/lftp-"$VERSION".md5sum | grep lftp-"$VERSION".tar.xz > lftp-"$VERSION".tar.xz.md5sum
+	curl -O http://lftp.tech/ftp/lftp-"$VERSION".tar.xz
+	curl http://lftp.tech/ftp/lftp-"$VERSION".md5sum | grep lftp-"$VERSION".tar.xz > lftp-"$VERSION".tar.xz.md5sum
 	md5sum --check lftp-"$VERSION".tar.xz.md5sum
 	tar xvf lftp-"$VERSION".tar.xz
 	cd lftp-"$VERSION"
